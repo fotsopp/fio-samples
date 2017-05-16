@@ -21,4 +21,4 @@ for IOPS_LOG in $(echo *_iops*.log); do fio2gnuplot -g -i -p ${IOPS_LOG} -d ../.
 for IOPS_LOG in $(echo *_iops*.log); do fio2gnuplot -g -i -p ${IOPS_LOG} -d ../../plot/128k; done
 ```
 ## Sample picture 
-![Randome Write 4K blocks](https://raw.githubusercontent.com/fotsopp/fio-samples/master/plot/4k/randwrite4k_iops.3-2Dsmooth.png)
+![Randome Write 4K blocks](https://raw.githubusercontent.com/fotsopp/fio-samples/master/plot/128k/randwrite128k_iops.3-2Dtrend.png)
