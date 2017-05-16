@@ -2,9 +2,56 @@
 A set of tests run against an idle StoreVirtual 3200 multisite 
 solution with 26x10K SAS drives and a dedicated 1Gbit link be-
 tween the sites. Round-trip time between the sites is measured
-to be below 1ms. Files was deleted between each run.
+to be below 1ms. Files are deleted between each run. 
+
+# Specification and software versions
 
 
+```bash
+# cat /etc/debian_version
+8.8
+
+# lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    2
+Socket(s):             2
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 45
+Model name:            Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+Stepping:              2
+CPU MHz:               2397.223
+BogoMIPS:              4794.44
+Hypervisor vendor:     VMware
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              15360K
+NUMA node0 CPU(s):     0-3
+
+# free -m
+             total       used       free     shared    buffers     cached
+Mem:          2010        386       1623          5         52        235
+-/+ buffers/cache:         99       1910
+Swap:          713          0        713
+
+# lsblk -f /dev/sdb1
+NAME FSTYPE LABEL UUID                                 MOUNTPOINT
+sdb1 ext4         ef9c562a-8db4-4923-918a-1e85a00fc683 /mnt/nch-tests
+
+# fio-v
+fio-2.1.11
+
+# gnuplot -V
+gnuplot 4.6 patchlevel 6
+```
 # Run tests
 ```bash
 fio --output=log/4k/4k.out config/4k.fio
