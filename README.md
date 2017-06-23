@@ -51,6 +51,26 @@ fio-2.1.11
 
 # gnuplot -V
 gnuplot 4.6 patchlevel 6
+
+# StoreVirtual OS
+CLIQ>utility run="cat /etc/lefthand/.version"
+
+HPE StoreVirtual OS Command Line Interface, v13.5.00.0793
+(C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+This command is recommended for HPE support only.
+Are You Sure (y/n)? y
+
+RESPONSE
+ result         0
+ processingTime 4016
+ name           CliqSuccess
+ description    Operation succeeded.
+
+  UTILITY
+   result   0
+   exitCode 0
+13.5.00.0793
 ```
 # Run tests
 ```bash
